@@ -11,7 +11,7 @@
 
   <div fxFlex>
     <mat-grid-list cols="2" rowHeight="200px">
-      <mat-grid-tile *ngFor="let dish of dishes">
+      <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
         <img height="200px" src={{dish.image}} alt={{dish.name}}>
         <mat-grid-tile-footer>
           <h1>{{dish.name | uppercase}}</h1>
@@ -19,92 +19,13 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
+
+  <app-dishdetails [selectedDish]="selectedDish"></app-dishdetails> 
 </div>
 
 
 
-  <div class="container"
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
-    fxLayoutGap="10px" 
-    fxLayoutGap.xs="0"
-    >
-
-   
-  <div fxFlex="40"  >
-    
-    <div fxFlex *ngIf="selectedDish" >
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h3>{{selectedDish.name | uppercase}}</h3>
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>
-        <mat-card-content>
-          <p>{{selectedDish.description}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  </div>
-
-
-  <div fxFlex ="40" >
-        <div *ngIf="dishdetails" >   
-           <h3>Comments</h3>
-          <div>
-            <mat-list>
-              <mat-list-item style="height: 20px" >{{dishdetails.comment}}</mat-list-item>
-              <mat-list-item style="height: 20px">{{dishdetails.rating}} Stars</mat-list-item>
-              <mat-list-item style="height: 20px">-- {{dishdetails.author}},
-              {{dishdetails.date | date: 'MMMM d, y'}}</mat-list-item>
-            </mat-list>           
-         
-            
-            <mat-list>
-                <mat-list-item style="height: 20px">{{dishdetails1.comment}}</mat-list-item>
-                <mat-list-item style="height: 20px">{{dishdetails1.rating}} Stars</mat-list-item>
-                <mat-list-item style="height: 20px">-- {{dishdetails1.author}},
-                {{dishdetails1.date | date: 'MMMM d, y'}}</mat-list-item>
-            </mat-list>
-           
-            
-            <mat-list>
-                <mat-list-item style="height: 20px">{{dishdetails2.comment}}</mat-list-item>
-                <mat-list-item style="height: 20px">{{dishdetails2.rating}} Stars</mat-list-item>
-                <mat-list-item style="height: 20px">-- {{dishdetails2.author}},
-                {{dishdetails2.date | date: 'MMMM d, y'}}</mat-list-item>
-            </mat-list>
-
-            
-            <mat-list>
-                <mat-list-item style="height: 20px">{{dishdetails3.comment}}</mat-list-item>
-                <mat-list-item style="height: 20px">{{dishdetails3.rating}} Stars</mat-list-item>
-                <mat-list-item style="height: 20px">-- {{dishdetails3.author}},
-                {{dishdetails3.date | date: 'MMMM d, y'}}</mat-list-item>
-            </mat-list>          
-
-
-            
-            <mat-list>
-                <mat-list-item style="height: 20px">{{dishdetails4.comment}}</mat-list-item>
-                <mat-list-item style="height: 20px">{{dishdetails4.rating}} Stars</mat-list-item>
-                <mat-list-item style="height: 20px">-- {{dishdetails4.author}},
-                {{dishdetails4.date | date: 'MMMM d, y'}}</mat-list-item>
-            </mat-list>
-          </div>
-
-
-        </div>
-    </div>
-    
+ 
   
 
 

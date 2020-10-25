@@ -12,12 +12,14 @@ import { AppComponent } from './app.component';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    DishdetailsComponent
   ],
   imports: [
     BrowserModule,
