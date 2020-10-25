@@ -17,14 +17,22 @@ import { from } from 'rxjs';
 import {DishService } from './services/dish.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-  
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     DishdetailsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     MatGridListModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AppRoutingModule
   ],
   providers: [
     DishService
