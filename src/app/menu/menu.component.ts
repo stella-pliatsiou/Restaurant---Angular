@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
 
   dishes: Dish[];
  
-  selectedDish : Dish;
+  dish : Dish;
 
   constructor(private DishService: DishService) { }
 
@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
   }
 
   onSelect(dish: Dish){
-    this.selectedDish = dish;
+    this.dish = dish;
   }
 
 }
