@@ -15,6 +15,7 @@ import { MenuComponent } from './menu/menu.component';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component';
 import { from } from 'rxjs';
 import { DishService } from './services/dish.service';
+import { LeaderService } from './services/leader.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
@@ -48,6 +49,7 @@ import { PromotionService } from './services/promotion.service';
   ],
   providers: [
     DishService,
+    LeaderService,
     PromotionService
   ],
   bootstrap: [AppComponent]
