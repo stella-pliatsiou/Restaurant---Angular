@@ -23,9 +23,12 @@ import { LeaderService } from '../services/leader.service';
       private leaderservice: LeaderService) { }
   
     ngOnInit() {
-      this.dish = this.dishservice.getFeaturedDish();
-      this.promotion = this.promotionservice.getFeaturedPromotion();
-      this.leader = this.leaderservice.getFeaturedLeader();
+      this.dishservice.getFeaturedDish()
+        .then(dish =>this.dish = dish);
+      this.promotionservice.getFeaturedPromotion()
+        .then(promotion =>this.promotion = promotion);
+      this.leaderservice.getFeaturedLeader()
+        .then(leader => this.leader = leader); 
     }
 
 
